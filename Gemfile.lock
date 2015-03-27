@@ -22,6 +22,10 @@ GEM
     bond (0.4.3)
     builder (3.1.4)
     coderay (1.1.0)
+<<<<<<< HEAD
+    geocoder (1.2.8)
+=======
+>>>>>>> 0be4296a5107b8fd5930155669b6d30d8e130a1e
     google_places (0.30.0)
       httparty (~> 0.13.1)
     httparty (0.13.3)
@@ -86,6 +90,10 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+<<<<<<< HEAD
+  geocoder
+=======
+>>>>>>> 0be4296a5107b8fd5930155669b6d30d8e130a1e
   google_places
   pry
   puma
