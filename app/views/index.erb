@@ -1,7 +1,45 @@
-<h1>Home Page</h1>
+<div id="center">
 
-<ul>
-  <% @spots.each do |spot|%>
-    <li><%= spot.name %> <%= spot.rating %></li>
-  <% end %>
-</ul>
+  <h1>Dive Roulette</h1>
+
+  <h3> What do you want to eat? </h3>
+
+  <div>
+    <button type="button">Breakfast</button>
+    <button type="button">Lunch</button>
+    <button type="button">Dinner</button>
+    <button type="button">Bar</button>
+   </div>
+
+   <h3> How adventurous are you? </h3>
+
+  <div>
+    <button class="myButton" type="button">not really</button>
+    <button type="button">kinda</button>
+    <button type="button">very</button>
+   </div>
+
+   <h3> How far will you go? </h3>
+
+   <div>
+    <button type="button">1km</button>
+    <button type="button">3km</button>
+    <button type="button">5km</button>
+   </div>
+
+    <div>
+    <button type="button">go!</button>
+   </div>
+
+    <h3> RESTAURANT NAME </h3>
+    <h3> ADDRESS </h3>
+
+    <div>
+    <button type="button">Another dive?</button>
+   </div>
+
+   <form action="/dives" method="post">
+    <input type="hidden" name="food_type" id="food_type">
+
+  </form>
+</div>
