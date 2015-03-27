@@ -16,3 +16,6 @@ group :development, :test do
   gem 'shotgun'
   gem 'sqlite3'
 end
+
+gem 'google_places'
+gem 'geocoder'

@@ -1,1 +1,7 @@
 <h1>Home Page</h1>
+
+<ul>
+  <% @spots.each do |spot|%>
+    <li><%= spot.name %> <%= spot.rating %></li>
+  <% end %>
+</ul>
