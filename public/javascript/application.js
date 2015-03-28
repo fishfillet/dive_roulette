@@ -19,11 +19,11 @@ $(document).ready(function() {
     $.ajax({
       url: '/selection',
       method: 'POST',
-      data: {
+      data: JSON.stringify({
         meal: meal,
         dnager: danger,
         radius: radius
-      }
+      })
     }).done(function(dataFromServer) {
       // put what you want to do to page after response here
       // dataFromServer.name
