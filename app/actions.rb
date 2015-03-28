@@ -8,3 +8,17 @@ get '/' do
 
   erb :index
 end
+
+get '/test' do
+
+  # binding.pry
+
+  #call google places
+
+  # ask for places that match all your colllected variables
+
+  #return the json that google gives you
+
+
+  '{"test": "corey"}'
+end
