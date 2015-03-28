@@ -16,7 +16,7 @@ $("body").on("click", ".food_type", function(event) {
   $('.food_type').attr('value', d_food_type);
   $('html, body').animate({                   //smooth scrollin bud.
     scrollTop: $("#page3").offset().top
-  }, 2000);
+  }, 1000);
   //obj.food_type = ;
   // $('#food_type').val(d_food_type);
   console.log($('#food_type').val());
@@ -30,7 +30,7 @@ $("body").on("click", ".danger_type", function(event) {
   $('.danger_type').attr('value', d_danger_type);
   $('html, body').animate({                   //smooth scrollin bud.
     scrollTop: $("#page4").offset().top
-  }, 2000);
+  }, 1000);
   //obj.food_type = ;
   // $('#food_type').val(d_food_type);
   console.log($('#danger_type').val());
