@@ -54,9 +54,27 @@ a{
  margin-top: 1em;
 }
 
-h3 {
-  font-family:'Oswald', sans-serif;
+#header{
+  bbackground-color: #425660;
+  padding: 20px;
 }
+
+/*#meal_section {
+  padding-top: 10%;
+}
+
+#danger_section {
+  padding-top: 50%;
+}
+
+#radius_section {
+  padding-top: 50%;
+}
+
+#go_section {
+  padding-top: 50%;
+  padding-bottom: 25%;
+}*/
 
 .myButton {
  background-color:#44c767;
