@@ -54,6 +54,10 @@ a{
  margin-top: 1em;
 }
 
+h3 {
+  font-family:'Oswald', sans-serif;
+}
+
 .myButton {
  background-color:#44c767;
  -moz-border-radius:28px;

@@ -1,29 +1,34 @@
+<h1>hello</h1>
+<% @spots.each do |spot| %>
+  <%= spot.name %>
+<% end %>
+<!-- 
 <div id="center">
   
   <div>
     <h1>Dive Roulette</h1>
   </div> 
 
-  <div>
+  <div class="meal_section">
     <h3> What do you want to eat? </h3>
     <div>
-      <button type="button">Breakfast</button>
-      <button type="button">Lunch</button>
-      <button type="button">Dinner</button>
-      <button type="button">Bar</button>
+      <button value="breakfast and brunch" class="myButton" type="button">Breakfast</button>
+      <button class="myButton" type="button">Lunch</button>
+      <button class="myButton" type="button">Dinner</button>
+      <button class="myButton" type="button">Bar</button>
      </div>
   </div>
 
-  <div>
+  <div class="danger_section">
      <h3> How adventurous are you? </h3>
     <div>
-      <button class="myButton" type="button">not really</button>
+      <button type="button">not really</button>
       <button type="button">kinda</button>
       <button type="button">very</button>
      </div>
   </div>
 
-  <div>
+  <div class="radius_section">
      <h3> How far will you go? </h3>
       <div>
       <button type="button">1km</button>
@@ -34,7 +39,7 @@
 
   <div>
     <div>
-    <button type="button">go!</button>
+      <button id="go" type="button">go!</button>
     </div>
   </div>
 
@@ -52,3 +57,4 @@
   </form>
   
 </div>
+ -->

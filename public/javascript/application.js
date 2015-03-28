@@ -1,4 +1,20 @@
 $(document).ready(function() {
+  // var meal, danger, radius;
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  // $('.meal_section button').click(function() { 
+  //   meal = $(this).attr('value');
+  // });
+
+  // $('.danger_section button').click(function() { 
+  //   danger = $(this).text();
+  // });
+
+  // $('.radius_section button').click(function() { 
+  //   radius = $(this).text();
+  // });
+
+  // $('#go').click(function() {
+  //   $.get('/selection', {"meal": meal, "danger": danger, "radius": radius});
+  // });
+
 });
