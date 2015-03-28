@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+// Page loads, delay to show logo, scrolls to first section.
+$("body").delay(1000).animate({ scrollTop: 1000 }, "slow");
+
 var $obj = {
   "food_type": "breakfast"
 
@@ -19,6 +22,19 @@ $("body").on("click", ".food_type", function(event) {
   console.log($('#food_type').val());
 });
 
+$("body").on("click", ".danger_type", function(event) {
+  console.log("Clicked the food-type button!");
+  var d_danger_type = $(this).attr('d-food-type');
+  console.log(d_danger_type);
+
+  $('.danger_type').attr('value', d_danger_type);
+  $('html, body').animate({                   //smooth scrollin bud.
+    scrollTop: $("#page4").offset().top
+  }, 2000);
+  //obj.food_type = ;
+  // $('#food_type').val(d_food_type);
+  console.log($('#danger_type').val());
+});
 // $("body").on("click", "#submitttt", function(event) {
 //   $.getJSON("/test"[, $obj][, function]( data ) {
 //     console.log("got data!");
