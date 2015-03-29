@@ -38,8 +38,6 @@ $(document).ready(function() {
   });
 
   $('#go').click(function() {
-    // $.get('/selection', {"meal": meal, "danger": danger, "radius": radius});
-    // window.location = somelocation
     $.ajax({
       url: '/selection',
       method: 'POST',
@@ -51,10 +49,12 @@ $(document).ready(function() {
     }).done(function(dataFromServer) {
       name = dataFromServer[0].name
       address = dataFromServer[0].vicinity
-      // name = "it works"
-      console.log("in done")
+      rating = dataFromServer[0].rating
+
+      
       $( "#result_section" ).append( "<h1>" + name + "</h1>" );
       $( "#result_section" ).append( "<h1>" + address + "</h1>" );
+      $( "#result_section" ).append( "<h1>" + rating + "</h1>" );
     }).error(function(errorResponseFromServer) {
       console.log(errorResponseFromServer)
     })

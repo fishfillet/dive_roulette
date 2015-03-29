@@ -32,7 +32,12 @@ post '/selection' do
   @spots.each do |spot|
     puts spot.name
     puts spot.vicinity
+    puts spot.rating
+    # puts spot.inspect
   end
+
+  # puts @spots[0].name
+  # puts @spots[0].rating
   
   json @spots
   # @meal
