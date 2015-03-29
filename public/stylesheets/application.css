@@ -56,14 +56,21 @@ a{
 
 #page2{
   height: 1000px;
+  position: relative;
+/*  top: 70%;*/
+  transform: translateY(20%)
 }
 
 #page3{
   height: 1000px;
+  position: relative;
+  top: 50%;
 }
 
 #page4{
   height: 1000px;
+  position: relative;
+  top: 50%;
 }
 
 #page5{
