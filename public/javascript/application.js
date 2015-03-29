@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 // Page loads, delay to show logo, scrolls to first section.
-$("body").delay(1000).animate({ scrollTop: 1000 }, "slow");
+$("html, body").delay(1000).animate({scrollTop: $('#page2').offset().top }, 1000);
 
 var $obj = {
   "food_type": "breakfast"
@@ -9,10 +9,9 @@ var $obj = {
 };
 
 $("body").on("click", ".food_type", function(event) {
-  console.log("Clicked the food-type button!");
+  // console.log("Clicked the food-type button!");
   var d_food_type = $(this).attr('d-food-type');
-  console.log(d_food_type);
-
+  // console.log(d_food_type);
   $('.food_type').attr('value', d_food_type);
   $('html, body').animate({                   //smooth scrollin bud.
     scrollTop: $("#page3").offset().top
@@ -39,7 +38,7 @@ $("body").on("click", ".danger_type", function(event) {
 
 $("body").on("click", ".distance", function(event) {
   console.log("Clicked the distance button!");
-  var d_distance = $(this).attr('d-distance');
+  var d_distance = $(this).attr('d-distance-type');
   console.log(d_distance);
 
   $('.distance').attr('value', d_distance);
