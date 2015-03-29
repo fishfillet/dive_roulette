@@ -1,7 +1,7 @@
 html{
  height: 100%;
  font-size: 1rem;
- background-color: #608080;
+ background-color: DADAE0;
  font-family: futura-pt,futura-heavy,"Helvetica Neue",
  Helvetica,Arial,sans-serif;
 }
@@ -119,4 +119,23 @@ a{
     -webkit-border-radius: 10px;
     width: 200px;
     height: 200px;
+}
+
+
+
+.big_ass_button {
+-webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+}
+
+.big_ass_button:hover {
+transform: rotate(360deg);
+-webkit-transform: rotate(360deg);
+-ms-transform: rotate(360deg);
 }
