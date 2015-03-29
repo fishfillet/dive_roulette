@@ -61,23 +61,23 @@ a{
   transform: translateY(20%)
 }
 
-#page3{
+#danger_section{
   height: 1000px;
   position: relative;
   top: 50%;
 }
 
-#page4{
+#radius_section{
   height: 1000px;
   position: relative;
   top: 50%;
 }
 
-#page5{
+#go_section{
   height: 1000px;
 }
 
-#page6{
+#result_section{
   height: 1000px;
 }
 

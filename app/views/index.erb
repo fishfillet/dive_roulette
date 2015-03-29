@@ -7,53 +7,62 @@
   <section id="page2">
     <h3> What do you want to eat? </h3>
     <div>
-       <img class="food_type action_button" d-food-type="breakfast,brunch" src="img/breakfast.svg"/>
-       <img class="food_type action_button" d-food-type="lunch" src="img/lunch.svg"/>
-       <img class="food_type action_button" d-food-type="dinner" src="img/dinner.svg"/>
-       <img class="food_type action_button" d-food-type="bar" src="img/drinks.svg"/>
+       <img class="food_type action_button" value="breakfast" d-food-type="breakfast,brunch" src="img/breakfast.svg"/>
+       <img class="food_type action_button" value="lunch" d-food-type="lunch" src="img/lunch.svg"/>
+       <img class="food_type action_button" value="dinner" d-food-type="dinner" src="img/dinner.svg"/>
+       <img class="food_type action_button" value="bar" d-food-type="bar" src="img/drinks.svg"/>
      </div>
   </section>
 
-  <section id="page3">
+  <section id="danger_section">
      <h3> How adventurous are you? </h3>
     <div>
-      <img class="danger_type action_button" d-danger-type="breakfast" src="img/dangermeh.svg"/>
-      <img class="danger_type action_button" d-danger-type="breakfast" src="img/dangermedium.svg"/>
-      <img class="danger_type action_button" d-danger-type="breakfast" src="img/dangerhigh.svg"/>
+      <img class="danger_type action_button" value="okay" d-danger-type="breakfast" src="img/dangermeh.svg"/>
+      <img class="danger_type action_button" value="middle" d-danger-type="breakfast" src="img/dangermedium.svg"/>
+      <img class="danger_type action_button" value="dangerous" d-danger-type="breakfast" src="img/dangerhigh.svg"/>
      </div>
   </section>
 
-  <section id="page4">
+  <section id="radius_section">
      <h3> How far will you go? </h3>
       <div>
-      <img class="distance action_button" d-danger-type="1km" src="img/1km.svg"/>
-      <img class="distance action_button" d-danger-type="2km" src="img/2km.svg"/>
-      <img class="distance action_button" d-danger-type="5km" src="img/5km.svg"/>
-      <img class="distance action_button" d-danger-type="10km" src="img/10km.svg"/>
+      <img class="distance action_button" value="1" d-danger-type="1km" src="img/1km.svg"/>
+      <img class="distance action_button" value="2" d-danger-type="2km" src="img/2km.svg"/>
+      <img class="distance action_button" value="5" d-danger-type="5km" src="img/5km.svg"/>
+      <img class="distance action_button" value="10" d-danger-type="10km" src="img/10km.svg"/>
      </div>
   </section>
 
-  <section id="page5">
+  <section id="go_section">
     <div>
-    <button type="button">go!</button>
+    <button class="go" id="go" type="button">go!</button>
     </div>
   </section>
 
-  <section id="page6">
-    <h3> RESTAURANT NAME </h3>
+  <section id="result_section">
+    <!-- <h3> RESTAURANT NAME </h3>
     <h3> ADDRESS </h3>
       <div>
         <button id="submitttt" type="button">Another dive?</button>
-      </div>
+      </div> -->
   </section>
-
-
-  <form action="/dives" method="post">
-    <input  type="hidden" name="food_type" id="food_type" value="" />
-    <input  type="hidden" name="food_type" id="food_type" value="" />
-    <input  type="hidden" name="food_type" id="food_type" value="" />
-
-  </form>
   
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
