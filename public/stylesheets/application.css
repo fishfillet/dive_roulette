@@ -57,21 +57,23 @@ a{
 
 #page2{
   height: 1000px;
+  position: relative;
 }
 
-#page3{
+#danger_section{
+  height: 1000px;
+
+}
+
+#radius_section{
   height: 1000px;
 }
 
-#page4{
+#go_section{
   height: 1000px;
 }
 
-#page5{
-  height: 1000px;
-}
-
-#page6{
+#result_section{
   height: 1000px;
 }
 

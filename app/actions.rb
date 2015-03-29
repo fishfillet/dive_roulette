@@ -1,24 +1,56 @@
 # Homepage (Root path)
 require 'google_places'
+require 'sinatra/json'
+require 'geocoder'
+require 'pry'
 
 get '/' do
-  @client = GooglePlaces::Client.new("AIzaSyCRKHOPOd_h4GLfqrLPqkEap7l3Q_Tuf9A")
+  # @client = GooglePlaces::Client.new("AIzaSyCRKHOPOd_h4GLfqrLPqkEap7l3Q_Tuf9A")
   
-  @spots = @client.spots(49.282130099999996, -123.10830340000001, :types => 'restaurant')
+  # @spots = @client.spots(49.282130099999996, -123.10830340000001, :types => 'restaurant')
 
   erb :index
 end
 
-get '/test' do
+post '/selection' do
+  @client = GooglePlaces::Client.new("AIzaSyCRKHOPOd_h4GLfqrLPqkEap7l3Q_Tuf9A")
+  
+  @meal = params[:meal].to_s
+  @danger = params[:danger].to_s
+  @radius = params[:radius].to_i
 
-  # binding.pry
+  @result = Geocoder.search("70.36.63.26")
+  latitude = @result[0].data["latitude"]
+  longitude = @result[0].data["longitude"]
 
-  #call google places
+  @spots = @client.spots(latitude, longitude, :name => @meal, :radius => @radius)
 
-  # ask for places that match all your colllected variables
+  @max = @spots.count-1
 
-  #return the json that google gives you
+  def sort_by_danger
+    @heightest_rate = @spots[0]
+    @middle_rate = @spots[0]
+    @lowest_rate = @spots[0]
 
+    # find max
+    for i in 1..@max
+      @heightest_rate = [@spots[i].rating, @heightest_rate].max
+    #   @lowest_rate = [@spots[i].rating, @lowest_rate].min
+    end
 
-  '{"test": "corey"}'
+    # puts "heigh: #{@heightest_rate.name}"
+    # puts "low: #{@lowest_rate.name}"
+
+  end
+
+  # sort_by_danger
+
+  @spots.each do |spot|
+    puts spot.name
+    # puts spot.vicinity
+    puts spot.rating
+    # puts spot.inspect
+  end
+  
+  json @spots
 end
