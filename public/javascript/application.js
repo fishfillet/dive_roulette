@@ -49,12 +49,9 @@ $(document).ready(function() {
     }).done(function(dataFromServer) {
       name = dataFromServer[0].name
       address = dataFromServer[0].vicinity
-      rating = dataFromServer[0].rating
 
-      
       $( "#result_section" ).append( "<h1>" + name + "</h1>" );
       $( "#result_section" ).append( "<h1>" + address + "</h1>" );
-      $( "#result_section" ).append( "<h1>" + rating + "</h1>" );
     }).error(function(errorResponseFromServer) {
       console.log(errorResponseFromServer)
     })

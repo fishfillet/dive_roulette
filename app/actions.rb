@@ -1,6 +1,7 @@
 # Homepage (Root path)
 require 'google_places'
 require 'sinatra/json'
+require 'geocoder'
 require 'pry'
 
 get '/' do
@@ -15,30 +16,41 @@ post '/selection' do
   @client = GooglePlaces::Client.new("AIzaSyCRKHOPOd_h4GLfqrLPqkEap7l3Q_Tuf9A")
   
   @meal = params[:meal].to_s
-  @danger = params[:danger]
+  @danger = params[:danger].to_s
   @radius = params[:radius].to_i
 
-  # @spots = @client.spots(-33.8670522, 151.1957362, :types => 'restaurant')
-  @spots = @client.spots(49.2821060,-123.1082710, :name => @meal, :radius => @radius)
+  @result = Geocoder.search("70.36.63.26")
+  latitude = @result[0].data["latitude"]
+  longitude = @result[0].data["longitude"]
 
-  # puts @spots.inspect
+  @spots = @client.spots(latitude, longitude, :name => @meal, :radius => @radius)
 
-  # binding.pry
+  @max = @spots.count-1
 
-  # puts "meal #{@meal}"
-  # puts "danger #{@danger}"
-  # puts "radius #{@radius}"
+  def sort_by_danger
+    @heightest_rate = @spots[0]
+    @middle_rate = @spots[0]
+    @lowest_rate = @spots[0]
+
+    # find max
+    for i in 1..@max
+      @heightest_rate = [@spots[i].rating, @heightest_rate].max
+    #   @lowest_rate = [@spots[i].rating, @lowest_rate].min
+    end
+
+    # puts "heigh: #{@heightest_rate.name}"
+    # puts "low: #{@lowest_rate.name}"
+
+  end
+
+  sort_by_danger
 
   @spots.each do |spot|
     puts spot.name
-    puts spot.vicinity
+    # puts spot.vicinity
     puts spot.rating
     # puts spot.inspect
   end
-
-  # puts @spots[0].name
-  # puts @spots[0].rating
   
   json @spots
-  # @meal
 end
