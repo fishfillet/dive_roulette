@@ -15,14 +15,25 @@ post '/selection' do
   @client = GooglePlaces::Client.new("AIzaSyCRKHOPOd_h4GLfqrLPqkEap7l3Q_Tuf9A")
   
   @meal = params[:meal].to_s
-  @danger = params[:danger].to_i
+  @danger = params[:danger]
   @radius = params[:radius].to_i
 
-  @spots = @client.spots(49.282130099999996, -123.10830340000001, :type => @meal)
+  # @spots = @client.spots(-33.8670522, 151.1957362, :types => 'restaurant')
+  @spots = @client.spots(49.2821060,-123.1082710, :name => @meal, :radius => @radius)
 
-  puts @spots.each do |spot|
-    stop
+  # puts @spots.inspect
+
+  # binding.pry
+
+  # puts "meal #{@meal}"
+  # puts "danger #{@danger}"
+  # puts "radius #{@radius}"
+
+  @spots.each do |spot|
+    puts spot.name
+    puts spot.vicinity
   end
   
-  # json @spots
+  json @spots
+  # @meal
 end
