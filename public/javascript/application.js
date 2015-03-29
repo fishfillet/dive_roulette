@@ -1,74 +1,66 @@
 $(document).ready(function() {
-  var meal, danger, radius;
 
-  $('#meal_section button').click(function() { 
-    meal = $(this).val();
-  });
+// Page loads, delay to show logo, scrolls to first section.
+$("body").delay(1000).animate({ scrollTop: 1000 }, "slow");
 
-  $('#danger_section button').click(function() { 
-    danger = $(this).val();
-  });
+var $obj = {
+  "food_type": "breakfast"
 
-  $('#radius_section button').click(function() { 
-    radius = $(this).val();
-  });
+};
 
-  $('#go').click(function() {
-    // $.get('/selection', {"meal": meal, "danger": danger, "radius": radius});
-    // window.location = somelocation
-    $.ajax({
-      url: '/selection',
-      method: 'POST',
-      data: {
-        meal: meal,
-        dnager: danger,
-        radius: radius
-      }
-    }).done(function(dataFromServer) {
-      name = dataFromServer[0].name
-      // $( "#result_section" ).load(dataFromServer.name)
-      // console.log('return from sinatra', dataFromServer)
-      $( "#result_section" ).append( "<p>" + name + "</p>" );
-      $( "#result_section" ).append( "<p>" + rating + "</p>" );
-      
-    }).error(function(errorResponseFromServer) {
-      console.log(errorResponseFromServer)
-    })
-  });
+$("body").on("click", ".food_type", function(event) {
+  console.log("Clicked the food-type button!");
+  var d_food_type = $(this).attr('d-food-type');
+  console.log(d_food_type);
 
-  var $obj = {
-    "food_type": "breakfast"
+  $('.food_type').attr('value', d_food_type);
+  $('html, body').animate({                   //smooth scrollin bud.
+    scrollTop: $("#page3").offset().top
+  }, 1000);
+  //obj.food_type = ;
+  // $('#food_type').val(d_food_type);
+  console.log($('#food_type').val());
+});
 
-  };
+$("body").on("click", ".danger_type", function(event) {
+  console.log("Clicked the danger-type button!");
+  var d_danger_type = $(this).attr('d-danger-type');
+  console.log(d_danger_type);
 
+  $('.danger_type').attr('value', d_danger_type);
+  $('html, body').animate({                   //smooth scrollin bud.
+    scrollTop: $("#page4").offset().top
+  }, 1000);
+  //obj.food_type = ;
+  // $('#food_type').val(d_food_type);
+  console.log($('#danger_type').val());
+});
 
-  $("body").on("click", ".food_type", function(event) {
-      console.log("Clicked the food-type button!");
+$("body").on("click", ".distance", function(event) {
+  console.log("Clicked the distance button!");
+  var d_distance = $(this).attr('d-distance');
+  console.log(d_distance);
 
-    var d_food_type = $(this).attr('d-food-type');
-    console.log(d_food_type);
+  $('.distance').attr('value', d_distance);
+  $('html, body').animate({                   //smooth scrollin bud.
+    scrollTop: $("#page5").offset().top
+  }, 1000);
+  //obj.food_type = ;
+  // $('#food_type').val(d_food_type);
+  console.log($('#distance').val());
+});
+// $("body").on("click", "#submitttt", function(event) {
+//   $.getJSON("/test"[, $obj][, function]( data ) {
+//     console.log("got data!");
+//     // debugger;
+//   });
+// });
 
-    $('#food_type').attr('value', d_food_type);
-    //obj.food_type = ;
-    // $('#food_type').val(d_food_type);
-
-
-    console.log($('#food_type').val());
-  });
-
-
-  $("body").on("click", "#submitttt", function(event) {
-    $.getJSON("/test"[, $obj][, function]( data ) {
-      console.log("got data!");
-
-    });
-  });
+// $("#food_type").click(function() {
+//     $('html, body').animate({
+//         scrollTop: $("#myDiv").offset().top
+//     }, 2000);
+// });
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
-
-
-
-
-
-
