@@ -25,6 +25,7 @@ body{
  text-rendering:optimizeLegibility;
 }
 
+
 h1{
  font-size: 4em;
  color: #f4ea84;
@@ -56,20 +57,15 @@ a{
 
 #page2{
   height: 1000px;
-/*  position: relative;*/
-/*  top: 70%;*/
-/*  transform: translateY(20%)*/
+
 }
 
 #page3{
   height: 1000px;
-  /*position: relative;*/
-
 }
 
 #page4{
   height: 1000px;
-/*  position: relative;*/
 }
 
 #page5{
@@ -80,37 +76,12 @@ a{
   height: 1000px;
 }
 
-#myimage{
-
-}
 
 #center{
  text-align: center;
  margin-top: 1em;
 }
 
-.myButton {
- background-color:#44c767;
- -moz-border-radius:28px;
- -webkit-border-radius:28px;
- border-radius:28px;
- border:1px solid #18ab29;
- display:inline-block;
- cursor:pointer;
- color:#ffffff;
- font-family:arial;
- font-size:17px;
- padding:16px 31px;
- text-decoration:none;
- text-shadow:0px 1px 0px #2f6627;
-}
-.myButton:hover {
- background-color:#5cbf2a;
-}
-.myButton:active {
- position:relative;
- top:1px;
-}
 
 .action_button{
     padding: 10px;
@@ -120,8 +91,6 @@ a{
     width: 200px;
     height: 200px;
 }
-
-
 
 .big_ass_button {
 -webkit-transition-duration: 1s;
@@ -139,3 +108,11 @@ transform: rotate(360deg);
 -webkit-transform: rotate(360deg);
 -ms-transform: rotate(360deg);
 }
+
+.vertical{
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+
