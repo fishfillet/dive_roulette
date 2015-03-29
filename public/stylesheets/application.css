@@ -25,6 +25,13 @@ body{
  text-rendering:optimizeLegibility;
 }
 
+#map-canvas {
+  height: 30%;
+  margin: 0px;
+  padding: 0px
+}
+
+
 
 h1{
  font-size: 4em;

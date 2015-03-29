@@ -43,7 +43,7 @@ post '/selection' do
 
   end
 
-  # sort_by_danger
+  # sort_by_danger  
 
   @spots.each do |spot|
     puts spot.name
