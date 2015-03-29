@@ -18,5 +18,5 @@ post '/selection' do
   
   # json :myObj => @meal
   # {"abc" => 123}.to_json
-  # json @spots 
+  json @spots
 end

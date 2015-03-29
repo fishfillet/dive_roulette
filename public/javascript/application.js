@@ -25,8 +25,11 @@ $(document).ready(function() {
         radius: radius
       }
     }).done(function(dataFromServer) {
+      name = dataFromServer[0].name
       // $( "#result_section" ).load(dataFromServer.name)
-      console.log('return from sinatra', dataFromServer)
+      // console.log('return from sinatra', dataFromServer)
+      $( "#result_section" ).append( "<p>" + name + "</p>" );
+      $( "#result_section" ).append( "<p>" + rating + "</p>" );
       
     }).error(function(errorResponseFromServer) {
       console.log(errorResponseFromServer)
