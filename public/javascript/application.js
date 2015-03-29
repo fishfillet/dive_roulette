@@ -135,5 +135,5 @@ $("html, body").delay(1000).animate({scrollTop: $('#page2').offset().top }, 1000
 
 
 
-
+// end of code
 });
