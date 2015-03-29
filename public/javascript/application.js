@@ -60,11 +60,11 @@ $(document).ready(function() {
   $("body").on("click", "#submitttt", function(event) {
     $.getJSON("/test"[, $obj][, function]( data ) {
       console.log("got data!");
-      // debugger;
 
     });
   });
 
+  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
 
 

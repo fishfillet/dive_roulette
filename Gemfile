@@ -7,7 +7,7 @@ gem 'activesupport'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
-gem 'google_places'
+
 
 gem 'puma'
 gem 'tux'
@@ -20,3 +20,4 @@ end
 
 gem 'google_places'
 gem 'geocoder'
+gem 'twilio-ruby'
