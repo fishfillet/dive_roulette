@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 // Page loads, delay to show logo, scrolls to first section.
-$("body").delay(1000).animate({ scrollTop: 1000 }, "slow");
+$("html, body").delay(1000).animate({ scrollTop: $('#page2').offset().top }, 1000);
 
 var $obj = {
   "food_type": "breakfast"
@@ -49,6 +49,7 @@ $("body").on("click", ".distance", function(event) {
   // $('#food_type').val(d_food_type);
   console.log($('#distance').val());
 });
+
 // $("body").on("click", "#submitttt", function(event) {
 //   $.getJSON("/test"[, $obj][, function]( data ) {
 //     console.log("got data!");
