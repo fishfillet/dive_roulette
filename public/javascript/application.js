@@ -1,15 +1,15 @@
 $(document).ready(function() {
   var meal, danger, radius;
 
-  $('.meal_section button').click(function() { 
+  $('#meal_section button').click(function() { 
     meal = $(this).val();
   });
 
-  $('.danger_section button').click(function() { 
+  $('#danger_section button').click(function() { 
     danger = $(this).val();
   });
 
-  $('.radius_section button').click(function() { 
+  $('#radius_section button').click(function() { 
     radius = $(this).val();
   });
 
@@ -19,16 +19,15 @@ $(document).ready(function() {
     $.ajax({
       url: '/selection',
       method: 'POST',
-      data: JSON.stringify({
+      data: {
         meal: meal,
         dnager: danger,
         radius: radius
-      })
+      }
     }).done(function(dataFromServer) {
-      // put what you want to do to page after response here
-      // dataFromServer.name
       // $( "#result_section" ).load(dataFromServer.name)
       console.log('return from sinatra', dataFromServer)
+      
     }).error(function(errorResponseFromServer) {
       console.log(errorResponseFromServer)
     })

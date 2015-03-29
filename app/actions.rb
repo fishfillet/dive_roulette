@@ -14,12 +14,9 @@ post '/selection' do
   @danger = params[:danger].to_i
   @radius = params[:radius].to_i
 
-  # @spots = @client.spots(49.282130099999996, -123.10830340000001, :types => @meal)
-
-  # json @spots
+  @spots = @client.spots(49.282130099999996, -123.10830340000001 , :type => @meal)
+  
   # json :myObj => @meal
-
-  request.body.read
-  puts @meal
-
+  # {"abc" => 123}.to_json
+  # json @spots 
 end
