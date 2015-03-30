@@ -78,9 +78,18 @@ $(document).ready(function() {
     var mapOptions = {
       zoom: 15,
       center: centerPoint
-
     };
+
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    
+    var marker = new google.maps.Marker({
+      position: centerPoint,
+      map: map,
+      title: 'Hello World!'
+  });
+
+
+    
   }
   // test for map ------------------------------
 
