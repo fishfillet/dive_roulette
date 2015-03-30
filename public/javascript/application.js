@@ -4,7 +4,7 @@ $(document).ready(function() {
 // Page loads, delay to show logo, scrolls to first section.
 $("html, body").delay(1000).animate({scrollTop: $('#page2').offset().top }, 1000);
 
-  var d_food_type, d_danger_type, d_distance;
+  var d_food_type, d_danger_type, d_distance, lat, lng;
 
 // <<<<<<< HEAD
 // };
@@ -98,41 +98,68 @@ $("html, body").delay(1000).animate({scrollTop: $('#page2').offset().top }, 1000
   });
 
   $('#go').click(function() {
-    $.ajax({
-      url: '/selection',
-      method: 'POST',
-      data: {
-        meal: d_food_type,
-        dnager: d_danger_type,
-        radius: d_distance
-      }
-    }).done(function(dataFromServer) {
-      name = dataFromServer[0].name
-      address = dataFromServer[0].vicinity
-
-      $( "#result_section" ).append( "<h1>" + name + "</h1>" );
-      $( "#result_section" ).append( "<h1>" + address + "</h1>" );
-    }).error(function(errorResponseFromServer) {
-      console.log(errorResponseFromServer)
-    })
+    postParams = {
+      meal: d_food_type,
+      dnager: d_danger_type,
+      radius: d_distance
+    };
+    renderMap(postParams);
   });
 
+var map;
 
+function drawCenteredMap(dataFromServer) {
+
+  name = dataFromServer[0].name
+  address = dataFromServer[0].vicinity
+  lat = dataFromServer[0].lat
+  lng = dataFromServer[0].lng
+
+  $( "#result_section" ).append( "<h1>" + name + "</h1>" );
+  $( "#result_section" ).append( "<h1>" + address + "</h1>" );
+
+  console.log("LatLng", lat, lng);
+  var centerPoint = new google.maps.LatLng(lat, lng);
+  var mapOptions = {
+    zoom: 15,
+    center: centerPoint
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
 // test for map ------------------------------
 
- var map;
-    function initialize() {
-      var mapOptions = {
-        zoom: 8,
-        center: new google.maps.LatLng(-34.397, 150.644)
-      };
-      map = new google.maps.Map(document.getElementById('map-canvas'),
-          mapOptions);
-    }
+function renderMap(postParams) {
+  console.log("POSTing", postParams);
+  $.ajax({
+    url: '/selection',
+    method: 'POST',
+    data: postParams
+  })
+  .done(drawCenteredMap)
+  .error(function(errorResponseFromServer) {
+    console.log(errorResponseFromServer)
+  });
+}
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+function initializeMap() {
+  defaultParams = {
+      meal: "breakfast",
+      dnager: "safe",
+      radius: 10000
+    };
+  renderMap(postParams);
+}
+google.maps.event.addDomListener(window, 'load', initializeMap);
+ 
+// function loadScript() {
+//   var script = document.createElement('script');
+//   script.type = 'text/javascript';
+//   script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
+//       '&signed_in=true&callback=initialize';
+//   document.body.appendChild(script);
+// }
 
-
+// window.onload = loadScript;
 
 
 // end of code
