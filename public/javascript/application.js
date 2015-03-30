@@ -58,7 +58,6 @@ $(document).ready(function() {
   var map;
 
   function drawCenteredMap(dataFromServer) {
-    console.log("datafromservre", dataFromServer)
     name = dataFromServer.name
     address = dataFromServer.vicinity
     lat = dataFromServer.lat
@@ -68,7 +67,6 @@ $(document).ready(function() {
     $( "#restaurant_address" ).replaceWith( '<h2 id="restaurant_address">' + address + "</h2>" );
 
   // map stuff starts
-    console.log("LatLng", lat, lng);
     var centerPoint = new google.maps.LatLng(lat, lng);
     var mapOptions = {
       zoom: 15,
@@ -80,8 +78,14 @@ $(document).ready(function() {
     var marker = new google.maps.Marker({
       position: centerPoint,
       map: map,
-      animation: google.maps.Animation.DROP
+      animation: google.maps.Animation.DROP,
+      title: address
     });
+
+    // google.maps.event.addListener(marker, 'click', function() {
+    //   console.log('clicked marker');
+    //   setUrl('http://google.com');
+    // })
 
   }
   // test for map ------------------------------
@@ -101,18 +105,19 @@ $(document).ready(function() {
   // google.maps.event.addDomListener(window, 'load', renderMap);
 
 
-  $("body").on("click", ".danger_type", function(event) {
-    d_danger_type = $(this).attr('d-danger-type');
+  // $("body").on("click", ".danger_type", function(event) {
+  //   d_danger_type = $(this).attr('d-danger-type');
 
-    $('html, body').animate({                   //smooth scrollin bud.
-      scrollTop: $("#radius_section").offset().top
-    }, 1000);
-  });
+  //   $('html, body').animate({                   //smooth scrollin bud.
+  //     scrollTop: $("#radius_section").offset().top
+  //   }, 1000);
+  // });
 
-  $('#sent_address_button').click(function() {
-    var form_data = $(this).closest("form").serialize();
-    $.post('/sent_address', {"phone_number": form_data, "address": address});
+  function sent_address_button() {
+    console.log('click')
+    // var form_data = $(this).closest("form").serialize();
+    $.post('/sent_address', {"address": address});
     // window.location = somelocation
-  });
+  };
 
 });
