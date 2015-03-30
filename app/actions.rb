@@ -73,7 +73,7 @@ post '/selection' do
           @dangerous_pick = @dangerous_restaurants[rand(0..@dangerous_restaurants.count-1)]
         elsif @middle_restaurants.any?
           @dangerous_pick = @middle_restaurants[rand(0..@middle_restaurants.count-1)]
-        elsif @dangerous_restaurants.any?
+        elsif @safe_restaurants.any?
           @dangerous_pick = @safe_restaurants[rand(0..@safe_restaurants.count-1)]
         end
         @result = @dangerous_pick
