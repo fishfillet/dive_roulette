@@ -50,6 +50,22 @@ $("body").on("click", ".distance", function(event) {
   // $('#food_type').val(d_food_type);
   console.log($('#distance').val());
 });
+ 
+$("body").on("click", ".another_dive", function(event) {
+  console.log("Clicked the another dive button!");
+  var d_distance = $(this).attr('d-another-dive-type');
+  console.log(d_another_);
+
+  $('.distance').attr('value', d_distance);
+  $('html, body').animate({                   //smooth scrollin bud.
+    scrollTop: $("#page5").offset().top
+  }, 1000);
+  //obj.food_type = ;
+  // $('#food_type').val(d_food_type);
+  console.log($('#distance').val());
+});
+
+
 
 
 // $("body").on("click", "#submitttt", function(event) {

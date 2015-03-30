@@ -53,6 +53,7 @@ a{
 
 #page1{
   height: 1000px;
+  background-image: url("img/brickwall.jpg");
 }
 
 #page2{
@@ -101,6 +102,8 @@ a{
     -moz-transition-property: -moz-transform;
     -o-transition-property: -o-transform;
     transition-property: transform;
+    width: 600px;
+    height: 600px;
 }
 
 .big_ass_button:hover {
