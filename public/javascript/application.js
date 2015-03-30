@@ -64,10 +64,8 @@ $(document).ready(function() {
     lat = dataFromServer.lat
     lng = dataFromServer.lng
 
-    $( "#restaurant_name" ).replaceWith( '<h1 id="restaurant_name">' + name + "</h1>" );
-    $( "#restaurant_address" ).replaceWith( '<h1 id="restaurant_address">' + address + "</h1>" );
-    // $( "h1.name" ).replaceWith( "<h1 class="name">" + name + "</h1>" );
-    // $( "h1.address" ).replaceWith( "<h1 class="address">" + address + "</h1>" );
+    $( "#restaurant_name" ).replaceWith( '<h2 id="restaurant_name">' + name + "</h2>" );
+    $( "#restaurant_address" ).replaceWith( '<h2 id="restaurant_address">' + address + "</h2>" );
 
   // map stuff starts
     console.log("LatLng", lat, lng);
@@ -82,12 +80,9 @@ $(document).ready(function() {
     var marker = new google.maps.Marker({
       position: centerPoint,
       map: map,
-      animation: google.maps.Animation.DROP,
-      // title: 'Hello World!'
-  });
+      animation: google.maps.Animation.DROP
+    });
 
-
-    
   }
   // test for map ------------------------------
 
@@ -103,14 +98,21 @@ $(document).ready(function() {
     });
   }
 
-  // function initializeMap() {
-  //   defaultParams = {
-  //       meal: "breakfast",
-  //       danger: "safe",
-  //       radius: 10000
-  //     };
-  //   renderMap(postParams);
-  // }
   // google.maps.event.addDomListener(window, 'load', renderMap);
+
+
+  $("body").on("click", ".danger_type", function(event) {
+    d_danger_type = $(this).attr('d-danger-type');
+
+    $('html, body').animate({                   //smooth scrollin bud.
+      scrollTop: $("#radius_section").offset().top
+    }, 1000);
+  });
+
+  $('#sent_address_button').click(function() {
+    var form_data = $(this).closest("form").serialize();
+    $.post('/sent_address', {"phone_number": form_data, "address": address});
+    // window.location = somelocation
+  });
 
 });
