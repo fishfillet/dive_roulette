@@ -25,6 +25,12 @@ body{
  text-rendering:optimizeLegibility;
 }
 
+#map-canvas {
+  height: 30%;
+  margin: 0px;
+  padding: 0px
+}
+
 
 h1{
  font-size: 4em;
@@ -57,18 +63,16 @@ a{
 
 #page2{
   height: 1000px;
+  position: relative;
 }
 
 #danger_section{
   height: 1000px;
-  position: relative;
-  top: 50%;
+
 }
 
 #radius_section{
   height: 1000px;
-  position: relative;
-  top: 50%;
 }
 
 #go_section{
@@ -94,7 +98,7 @@ a{
     height: 200px;
 }
 
-.big_ass_button {
+.go {
 -webkit-transition-duration: 1s;
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
@@ -107,16 +111,16 @@ a{
     height: 600px;
 }
 
-.big_ass_button:hover {
+.go:hover {
 transform: rotate(360deg);
 -webkit-transform: rotate(360deg);
 -ms-transform: rotate(360deg);
 }
+
 
 .vertical{
   position: relative;
   top: 40%;
   transform: translateY(-50%);
 }
-
 
