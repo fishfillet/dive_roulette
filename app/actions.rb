@@ -39,18 +39,10 @@ post '/selection' do
       end
     end
 
-    puts "dangerous restaurants: #{@dangerous_restaurants.count}"
-    puts "middle restaurants: #{@middle_restaurants.count}"
-    puts "sfae restaurants: #{@safe_restaurants.count}"
-
   end
 
 
   def assign_restaurant
-
-    puts "get in assign method"
-    # puts "random dangers restaurant: #{@dangerous_restaurants[0]}"
-    puts "danger_level: #{@danger_level}"
 
     case @danger_level
       # safe < middle < dangerous
@@ -87,21 +79,18 @@ post '/selection' do
         @result = @dangerous_pick
     end
 
-    # puts "safe_pick: #{@safe_pick.name}"
-    # puts "middle_pick: #{@middle_pick.name}"
-    # puts "dangerous_pick: #{@dangerous_pick.name}"
   end
 
   categories_danger_level
   assign_restaurant
 
-  # puts "all the restaurants: "
-  # @spots.each do |spot|
-    # puts spot.name
+  puts "all the restaurants: "
+  @spots.each do |spot|
+    puts spot.name
     # puts spot.vicinity
-    # puts spot.rating
+    puts spot.rating
     # puts spot.inspect
-  # end
-  
+  end
+
   json @result
 end

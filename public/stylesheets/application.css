@@ -25,6 +25,14 @@ body{
  text-rendering:optimizeLegibility;
 }
 
+#map-canvas {
+  height: 30%;
+  margin: 0px;
+  padding: 0px
+}
+
+
+
 h1{
  font-size: 4em;
  color: #f4ea84;
@@ -57,20 +65,15 @@ a{
 #page2{
   height: 1000px;
   position: relative;
-/*  top: 70%;*/
-  transform: translateY(20%)
 }
 
 #danger_section{
   height: 1000px;
-  position: relative;
-  top: 50%;
+
 }
 
 #radius_section{
   height: 1000px;
-  position: relative;
-  top: 50%;
 }
 
 #go_section{
@@ -81,37 +84,12 @@ a{
   height: 1000px;
 }
 
-#myimage{
-
-}
 
 #center{
  text-align: center;
  margin-top: 1em;
 }
 
-.myButton {
- background-color:#44c767;
- -moz-border-radius:28px;
- -webkit-border-radius:28px;
- border-radius:28px;
- border:1px solid #18ab29;
- display:inline-block;
- cursor:pointer;
- color:#ffffff;
- font-family:arial;
- font-size:17px;
- padding:16px 31px;
- text-decoration:none;
- text-shadow:0px 1px 0px #2f6627;
-}
-.myButton:hover {
- background-color:#5cbf2a;
-}
-.myButton:active {
- position:relative;
- top:1px;
-}
 
 .action_button{
     padding: 10px;
@@ -121,3 +99,10 @@ a{
     width: 200px;
     height: 200px;
 }
+
+.vertical{
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
