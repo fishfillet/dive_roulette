@@ -92,5 +92,7 @@ post '/selection' do
     # puts spot.inspect
   end
 
+  puts "result: #{@result.inspect}"
+
   json @result
 end

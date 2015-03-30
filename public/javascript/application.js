@@ -64,13 +64,10 @@ $(document).ready(function() {
     lat = dataFromServer.lat
     lng = dataFromServer.lng
 
-    // name = dataFromServer[0].name
-    // address = dataFromServer[0].vicinity
-    // lat = dataFromServer[0].lat
-    // lng = dataFromServer[0].lng
-
-    $( "#result_section" ).append( "<h1>" + name + "</h1>" );
-    $( "#result_section" ).append( "<h1>" + address + "</h1>" );
+    $( "#restaurant_name" ).replaceWith( '<h1 id="restaurant_name">' + name + "</h1>" );
+    $( "#restaurant_address" ).replaceWith( '<h1 id="restaurant_address">' + address + "</h1>" );
+    // $( "h1.name" ).replaceWith( "<h1 class="name">" + name + "</h1>" );
+    // $( "h1.address" ).replaceWith( "<h1 class="address">" + address + "</h1>" );
 
   // map stuff starts
     console.log("LatLng", lat, lng);
@@ -85,10 +82,10 @@ $(document).ready(function() {
     var marker = new google.maps.Marker({
       position: centerPoint,
       map: map,
-      title: 'Hello World!'
+
+      animation: google.maps.Animation.DROP
+
   });
-
-
     
   }
   // test for map ------------------------------
@@ -104,15 +101,5 @@ $(document).ready(function() {
       console.log(errorResponseFromServer)
     });
   }
-
-  function initializeMap() {
-    defaultParams = {
-        meal: "breakfast",
-        danger: "safe",
-        radius: 10000
-      };
-    renderMap(postParams);
-  }
-  google.maps.event.addDomListener(window, 'load', renderMap);
 
 });

@@ -12,6 +12,7 @@ body{
  color: black;
  height: 100%;
  width: 100%;
+background: url("brickwall.jpg");
 }
 
 *,
@@ -59,6 +60,7 @@ a{
 
 #page1{
   height: 1000px;
+
 }
 
 #page2{
@@ -96,6 +98,10 @@ a{
     -webkit-border-radius: 10px;
     width: 200px;
     height: 200px;
+}
+
+.action_button:hover{
+  color: red;
 }
 
 .go {

@@ -7,6 +7,6 @@ auth_token = '27a60a6d3d4a5a78edfa6bbb822c8d3f'
 @client = Twilio::REST::Client.new account_sid, auth_token
  
 message = @client.account.messages.create(:body => "waaaazzzzzup",
-    :to => "+16047152878",     # Replace with your phone number
+    :to => "2506860165",     # Replace with your phone number
     :from => "+16042295836")   # Replace with your Twilio number
 puts message.sid
