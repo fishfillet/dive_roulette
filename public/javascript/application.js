@@ -70,6 +70,8 @@ $(document).ready(function() {
     // $( "h1.address" ).replaceWith( "<h1 class="address">" + address + "</h1>" );
 
   // map stuff starts
+  // black and white code below
+
   //   var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
 
   //   var styledMap = new google.maps.StyledMapType(styles,
@@ -77,6 +79,7 @@ $(document).ready(function() {
 
   //     // Create a map object, and include the MapTypeId to add
   // // to the map type control.
+  
   // var mapOptions = {
   //   zoom: 11,
   //   center: new google.maps.LatLng(55.6468, 37.581),
