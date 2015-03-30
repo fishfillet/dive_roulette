@@ -43,12 +43,12 @@ $(document).ready(function() {
       method: 'POST',
       data: {
         meal: d_food_type,
-        dnager: d_danger_type,
+        danger: d_danger_type,
         radius: d_distance
       }
     }).done(function(dataFromServer) {
-      name = dataFromServer[0].name
-      address = dataFromServer[0].vicinity
+      name = dataFromServer.name
+      address = dataFromServer.vicinity
 
       $( "#result_section" ).append( "<h1>" + name + "</h1>" );
       $( "#result_section" ).append( "<h1>" + address + "</h1>" );
