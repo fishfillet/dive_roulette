@@ -118,6 +118,7 @@ function drawCenteredMap(dataFromServer) {
   $( "#result_section" ).append( "<h1>" + name + "</h1>" );
   $( "#result_section" ).append( "<h1>" + address + "</h1>" );
 
+// map stuff starts
   console.log("LatLng", lat, lng);
   var centerPoint = new google.maps.LatLng(lat, lng);
   var mapOptions = {
@@ -149,7 +150,7 @@ function initializeMap() {
     };
   renderMap(postParams);
 }
-google.maps.event.addDomListener(window, 'load', initializeMap);
+google.maps.event.addDomListener(window, 'load', renderMap);
  
 // function loadScript() {
 //   var script = document.createElement('script');
