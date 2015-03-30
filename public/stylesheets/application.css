@@ -1,7 +1,7 @@
 html{
  height: 100%;
  font-size: 1rem;
- background-color: #608080;
+ background-color: DADAE0;
  font-family: futura-pt,futura-heavy,"Helvetica Neue",
  Helvetica,Arial,sans-serif;
 }
@@ -32,10 +32,9 @@ body{
 }
 
 
-
 h1{
  font-size: 4em;
- color: #f4ea84;
+ color: #000000;
 }
 
 h2{
@@ -45,7 +44,7 @@ h2{
 h3{
  font-size: 2em;
  margin: 0;
- color: #404040;
+ color: #000000;
 }
 
 p{
@@ -55,7 +54,7 @@ p{
 
 a{
  text-decoration: none;
- color: #E0C0C0;
+ color: #000000;
 }
 
 #page1{
@@ -84,7 +83,6 @@ a{
   height: 1000px;
 }
 
-
 #center{
  text-align: center;
  margin-top: 1em;
@@ -100,9 +98,37 @@ a{
     height: 200px;
 }
 
+.go {
+-webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+    width: 600px;
+    height: 600px;
+}
+
+.go:hover {
+transform: rotate(360deg);
+-webkit-transform: rotate(360deg);
+-ms-transform: rotate(360deg);
+}
+
+
 .vertical{
   position: relative;
   top: 40%;
   transform: translateY(-50%);
+}
+
+.another_dive_button{
+    padding: 0px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    width: 400px;
 }
 

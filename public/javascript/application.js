@@ -38,6 +38,14 @@ $(document).ready(function() {
     }, 1000);
   });
 
+  $("body").on("click", ".another_dive", function(event) {
+    d_danger_type = $(this).attr('d-another-dive-type');
+
+    $('html, body').animate({                   //smooth scrollin bud.
+      scrollTop: $("#page2").offset().top
+    }, 1000);
+  });
+
   $('#go').click(function() {
     postParams = {
       meal: d_food_type,
@@ -56,13 +64,10 @@ $(document).ready(function() {
     lat = dataFromServer.lat
     lng = dataFromServer.lng
 
-    // name = dataFromServer[0].name
-    // address = dataFromServer[0].vicinity
-    // lat = dataFromServer[0].lat
-    // lng = dataFromServer[0].lng
-
-    $( "#result_section" ).append( "<h1>" + name + "</h1>" );
-    $( "#result_section" ).append( "<h1>" + address + "</h1>" );
+    $( "#restaurant_name" ).replaceWith( '<h1 id="restaurant_name">' + name + "</h1>" );
+    $( "#restaurant_address" ).replaceWith( '<h1 id="restaurant_address">' + address + "</h1>" );
+    // $( "h1.name" ).replaceWith( "<h1 class="name">" + name + "</h1>" );
+    // $( "h1.address" ).replaceWith( "<h1 class="address">" + address + "</h1>" );
 
   // map stuff starts
     console.log("LatLng", lat, lng);
@@ -71,7 +76,18 @@ $(document).ready(function() {
       zoom: 15,
       center: centerPoint
     };
+
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    
+    var marker = new google.maps.Marker({
+      position: centerPoint,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      // title: 'Hello World!'
+  });
+
+
+    
   }
   // test for map ------------------------------
 
@@ -87,26 +103,14 @@ $(document).ready(function() {
     });
   }
 
-  function initializeMap() {
-    defaultParams = {
-        meal: "breakfast",
-        dnager: "safe",
-        radius: 10000
-      };
-    renderMap(postParams);
-  }
-  google.maps.event.addDomListener(window, 'load', renderMap);
-   
-  // function loadScript() {
-  //   var script = document.createElement('script');
-  //   script.type = 'text/javascript';
-  //   script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
-  //       '&signed_in=true&callback=initialize';
-  //   document.body.appendChild(script);
+  // function initializeMap() {
+  //   defaultParams = {
+  //       meal: "breakfast",
+  //       danger: "safe",
+  //       radius: 10000
+  //     };
+  //   renderMap(postParams);
   // }
+  // google.maps.event.addDomListener(window, 'load', renderMap);
 
-  // window.onload = loadScript;
-
-
-  // end of code
 });
