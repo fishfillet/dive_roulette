@@ -124,3 +124,11 @@ transform: rotate(360deg);
   transform: translateY(-50%);
 }
 
+.another_dive_button{
+    padding: 0px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    width: 400px;
+}
+

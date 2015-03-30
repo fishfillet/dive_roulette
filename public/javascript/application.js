@@ -38,6 +38,14 @@ $(document).ready(function() {
     }, 1000);
   });
 
+  $("body").on("click", ".another_dive", function(event) {
+    d_danger_type = $(this).attr('d-another-dive-type');
+
+    $('html, body').animate({                   //smooth scrollin bud.
+      scrollTop: $("#page2").offset().top
+    }, 1000);
+  });
+
   $('#go').click(function() {
     postParams = {
       meal: d_food_type,
@@ -70,6 +78,7 @@ $(document).ready(function() {
     var mapOptions = {
       zoom: 15,
       center: centerPoint
+
     };
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   }
@@ -90,7 +99,7 @@ $(document).ready(function() {
   function initializeMap() {
     defaultParams = {
         meal: "breakfast",
-        dnager: "safe",
+        danger: "safe",
         radius: 10000
       };
     renderMap(postParams);
