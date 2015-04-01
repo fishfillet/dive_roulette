@@ -16,7 +16,8 @@ post '/selection' do
   @danger_level = params[:danger].to_s
   @radius = params[:radius].to_i
 
-  @location = Geocoder.search("70.36.63.26")
+  @location = request.location
+  # @location = Geocoder.search("70.36.63.26")
   latitude = @location[0].data["latitude"]
   longitude = @location[0].data["longitude"]
 
