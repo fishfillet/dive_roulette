@@ -21,3 +21,7 @@ end
 gem 'google_places'
 gem 'geocoder'
 gem 'twilio-ruby'
+
+group :production do
+  gem 'pg'
+end
