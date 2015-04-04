@@ -81,12 +81,8 @@ post '/selection' do
 
   end
 
-<<<<<<< HEAD
-  # sort_by_danger  
-=======
   categories_danger_level
   assign_restaurant
->>>>>>> feature3
 
   puts "all the restaurants: "
   @spots.each do |spot|
