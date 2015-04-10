@@ -78,16 +78,14 @@ $(document).ready(function() {
     };
 
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    
-    var marker = new google.maps.Marker({
+      
+      var marker = new google.maps.Marker({
       position: centerPoint,
       map: map,
-
       animation: google.maps.Animation.DROP
-
   });
     
-  }
+  }//end of drawCenteredMap
   // test for map ------------------------------
 
   function renderMap(postParams) {
