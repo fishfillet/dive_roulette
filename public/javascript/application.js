@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 
   // Page loads, delay to show logo, scrolls to first section.
-  $("html, body").delay(1000).animate({scrollTop: $('#page2').offset().top }, 1000);
+  $("html, body").delay(2000).animate({scrollTop: $('#page2').offset().top }, 2000);
 
   var d_food_type, d_danger_type, d_distance, lat, lng;
 
@@ -67,6 +67,7 @@ $(document).ready(function() {
     address = dataFromServer.vicinity
     lat = dataFromServer.lat
     lng = dataFromServer.lng
+    placeurl = dataFromServer.url
 
     $( "#restaurant_name" ).replaceWith( '<h1 id="restaurant_name">' + name + "</h1>" );
     $( "#restaurant_address" ).replaceWith( '<h1 id="restaurant_address">' + address + "</h1>" );
@@ -89,11 +90,16 @@ $(document).ready(function() {
     var marker = new google.maps.Marker({
     position: centerPoint,
     map: map,
+    url: "https://www.google.ca/maps/search/" + name,
     animation: google.maps.Animation.DROP
     });
 
     map.mapTypes.set('map_style', styledMap);
     map.setMapTypeId('map_style');
+
+    google.maps.event.addListener(marker, 'click', function() { 
+    window.open(marker.url, '_blank'); // doesn't have url for some reason...
+    });
     
   }//end of drawCenteredMap
   // test for map ------------------------------
