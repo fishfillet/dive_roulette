@@ -55,6 +55,15 @@ $(document).ready(function() {
     renderMap(postParams);
   });
 
+    function renderMap(postParams) {
+    $.ajax({
+      url: '/selection',
+      method: 'POST',
+      data: postParams
+    })
+    .done(drawCenteredMap);
+  }
+
   var map;
   var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
 
@@ -62,12 +71,11 @@ $(document).ready(function() {
     {name: "Styled Map"});
 
   function drawCenteredMap(dataFromServer) {
-    console.log("datafromservre", dataFromServer)
+    console.log("datafromserver", dataFromServer)
     name = dataFromServer.name
     address = dataFromServer.vicinity
     lat = dataFromServer.lat
     lng = dataFromServer.lng
-    placeurl = dataFromServer.url
 
     $( "#restaurant_name" ).replaceWith( '<h1 id="restaurant_name">' + name + "</h1>" );
     $( "#restaurant_address" ).replaceWith( '<h1 id="restaurant_address">' + address + "</h1>" );
@@ -98,19 +106,12 @@ $(document).ready(function() {
     map.setMapTypeId('map_style');
 
     google.maps.event.addListener(marker, 'click', function() { 
-    window.open(marker.url, '_blank'); // doesn't have url for some reason...
+    window.open(marker.url, '_blank'); 
     });
     
   }//end of drawCenteredMap
   // test for map ------------------------------
 
-  function renderMap(postParams) {
-    $.ajax({
-      url: '/selection',
-      method: 'POST',
-      data: postParams
-    })
-    .done(drawCenteredMap);
-  }
+
 
 });
