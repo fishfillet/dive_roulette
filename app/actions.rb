@@ -84,15 +84,15 @@ post '/selection' do
   categories_danger_level
   assign_restaurant
 
-  puts "all the restaurants: "
-  @spots.each do |spot|
-    puts spot.name
-    # puts spot.vicinity
-    puts spot.rating
-    # puts spot.inspect
-  end
+  # puts "all the restaurants: "
+  # @spots.each do |spot|
+  #   puts spot.name
+  #   # puts spot.vicinity
+  #   puts spot.rating
+  #   # puts spot.inspect
+  # end
 
-  puts "result: #{@result.inspect}"
+  # puts "result: #{@result.inspect}"
 
   json @result
 end
