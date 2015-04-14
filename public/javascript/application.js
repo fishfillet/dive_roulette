@@ -110,10 +110,7 @@ $(document).ready(function() {
       method: 'POST',
       data: postParams
     })
-    .done(drawCenteredMap)
-    .error(function(errorResponseFromServer) {
-      console.log(errorResponseFromServer)
-    });
+    .done(drawCenteredMap);
   }
 
 });
