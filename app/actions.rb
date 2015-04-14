@@ -2,7 +2,7 @@
 require 'google_places'
 require 'sinatra/json'
 require 'geocoder'
-require 'pry'
+
 
 get '/' do
   erb :index
