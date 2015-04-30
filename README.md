@@ -10,4 +10,4 @@ Sinatra
 =================
 Checkout the deployed version
 https://diveroulette.herokuapp.com/
---- api calls aren't being made at the moment
+
