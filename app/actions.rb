@@ -9,7 +9,7 @@ get '/' do
 end
 
 post '/selection' do
-  @client = GooglePlaces::Client.new("AIzaSyAlu8dVAKEOvyCrDo65WeGGbnkkRUoMYo0")
+  @client = GooglePlaces::Client.new("AIzaSyAwNHr_kbznxtxSBqD1vEiEkzALVoxxA7A")
   
   @meal = params[:meal].to_s
   @danger_level = params[:danger].to_s

@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
   // Page loads, delay to show logo, scrolls to first section.
   $("html, body").delay(2000).animate({scrollTop: $('#page2').offset().top }, 2000);
 
